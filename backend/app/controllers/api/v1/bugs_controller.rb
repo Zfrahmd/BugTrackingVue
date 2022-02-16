@@ -12,7 +12,7 @@ class Api::V1::BugsController < ApplicationController
   end
 
   def create 
-    @bug = Bug.new(bug_params))
+    @bug = Bug.new(bug_params)
     if @bug.save
       flash[:notice] = "Bug was created successfully"
       render json: @bug, status: :created, location: api_v1_bugs_path(@bug)
@@ -43,7 +43,7 @@ class Api::V1::BugsController < ApplicationController
   end
 
   def bug_params
-    params.require(:bug).permit(:bug_name, :description
+    params.require(:bug).permit(:bug_name, :description)
   end
 
 end

@@ -1,6 +1,6 @@
 <template>
-  <div class="container py-5">
-    <h1>Browse Projects</h1>
+  <div class="py-5">
+    <h1 class="text-center">Browse Projects</h1>
     <Projects />
   </div>
 </template>
@@ -14,5 +14,4 @@ export default {
     Projects,
   },
 };
-
 </script>

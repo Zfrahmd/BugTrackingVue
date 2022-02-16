@@ -12,7 +12,7 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def create 
-    @project = Project.new(project_params))
+    @project = Project.new(project_params)
     if @bug.save
       flash[:notice] = "Bug was created successfully"
       render json: @project, status: :created, location: api_v1_projects_path(@project)
@@ -43,6 +43,6 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:project_name, :description
+    params.require(:project).permit(:project_name, :description)
   end
 end

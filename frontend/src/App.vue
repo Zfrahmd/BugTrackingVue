@@ -23,7 +23,7 @@ export default {
 
 body {
   font-family: Poppins, sans-serif;
-  text-align: center;
+  /* text-align: center; */
   background: #1f1f1f;
   color: white;
   margin-bottom: 100px; /* Margin bottom by footer height */
@@ -33,10 +33,6 @@ body {
 
 .table {
   color: white;
-}
-#app {
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
 }
 
 /* Navigation bar starts */

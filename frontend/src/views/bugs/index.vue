@@ -1,6 +1,6 @@
 <template>
-  <div class="container py-5">
-    <h1>Browse Bugs</h1>
+  <div class="py-5">
+    <h1 class="text-center">Browse Bugs</h1>
     <Bugs />
   </div>
 </template>
