@@ -1,30 +1,96 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="div">
+    <Navigation />
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
-  <router-view/>
 </template>
 
+<script>
+// @ is an alias to /src
+import Navigation from '@/components/layouts/Navigation.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Navigation,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+body {
+  font-family: Poppins, sans-serif;
   text-align: center;
-  color: #2c3e50;
+  background: #1f1f1f;
+  color: white;
+  margin-bottom: 100px; /* Margin bottom by footer height */
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease-in;
 }
 
-#nav {
-  padding: 30px;
+.table {
+  color: white;
+}
+#app {
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
-#nav a {
+/* Navigation bar starts */
+.link_logo {
+  color:white;
+  transition: all 0.2s ease-in;
+}
+
+.link_logo:hover {
+  transition: all 0.2s ease-in;
+}
+
+.navbar-nav .nav-link {
+  color:rgb(145, 145, 145);
+  transition: all 0.2s ease-in;
+}
+
+.navbar-nav .nav-link:hover {
+  transition: all 0.2s ease-in;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(145, 145, 145);
+  transition: all 0.2s ease-in;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+  transition: all 0.2s ease-in;
+}
+
+.navigation {
+  background: linear-gradient(-90deg, #212529 0%, #1f222e 100%);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.3);
+}
+
+.dropdown-menu.show {
+  background-color: #20242a;
+  box-shadow: 0.1em 0.1em 1rem rgb(0 0 0 / 70%);
+  transition: all 0.2s ease-in;
+}
+
+.dropdown-item {
+  color: #ffffff;
+}
+
+.dropdown-item:hover {
+  color: #ffffff;
+  background-color: #1f1f1f;
+}
+
+.router-link-active {
   font-weight: bold;
-  color: #2c3e50;
 }
+/* Navigation bar end */
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
