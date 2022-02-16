@@ -23,7 +23,6 @@ export default {
 
 body {
   font-family: Poppins, sans-serif;
-  /* text-align: center; */
   background: #1f1f1f;
   color: white;
   margin-bottom: 100px; /* Margin bottom by footer height */
@@ -51,6 +50,7 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
+  color: white;
   transition: all 0.2s ease-in;
 }
 

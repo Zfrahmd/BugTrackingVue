@@ -14,7 +14,7 @@ class Api::V1::BugsController < ApplicationController
   def create 
     @bug = Bug.new(bug_params)
     if @bug.save
-      flash[:notice] = "Bug was created successfully"
+      # flash[:notice] = "Bug was created successfully"
       render json: @bug, status: :created, location: api_v1_bugs_path(@bug)
     else
       render json: @bug.errors, status: :unprocessable_entity
@@ -24,7 +24,7 @@ class Api::V1::BugsController < ApplicationController
   # PATCH/PUT /bugs/1
   def update
     if @bug.update(bug_params)
-      flash[:notice] = "Bug was updated successfully"
+      # flash[:notice] = "Bug was updated successfully"
       render json: @bug
     else
       render json: @bug.errors, status: :unprocessable_entity
@@ -34,12 +34,12 @@ class Api::V1::BugsController < ApplicationController
   # DELETE /bug/1
   def destroy
     @bug.destroy
-    flash[:notice] = "Bug was deleted successfully"
+    # flash[:notice] = "Bug was deleted successfully"
   end
   
   private
   def find_bug
-    @bug = bug.find(params[:id])
+    @bug = Bug.find(params[:id])
   end
 
   def bug_params

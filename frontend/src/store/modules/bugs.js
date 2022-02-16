@@ -18,9 +18,15 @@ export default {
       const response = await axios.get(api_url);
       commit('setBugs', response.data);
     },
+    async deleteBug({ commit }, id) {
+      await axios.delete(`${api_url}/${id}`);
+      commit('removeBug', id);
+    },
   },
 
   mutations: {
     setBugs: (state, bugs) => (state.bugsList = bugs),
+    removeBug: (state, id) => (
+      state.bugsList = state.bugsList.filter((bug) => bug.id !== id)),
   },
 };

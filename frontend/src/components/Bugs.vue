@@ -6,8 +6,10 @@
     class="col-sm-6 py-3">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{bug.title}}</h5>
-          <p class="card-text">{{bug.description}}</p>
+          <h5 class="card-title">Title:
+          <p style="color:yellow; display:inline-block;">{{bug.title}}</p></h5>
+          <p class="card-text">Description: {{bug.description}}</p>
+          <i @click="deleteBug(bug.id)" class="fas fa-trash-alt delete_icon"></i>
         </div>
       </div>
     </div>
@@ -20,7 +22,7 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
   name: 'Bugs',
   methods: {
-    ...mapActions(['fetchBugs']),
+    ...mapActions(['fetchBugs', 'deleteBug']),
   },
   computed: {
     ...mapGetters(['allBugs']),

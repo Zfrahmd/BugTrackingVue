@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/pages/Home.vue';
 import About from '@/views/pages/About.vue';
-import ProjectsIndex from '@/views/projects/index.vue';
-import BugsIndex from '@/views/bugs/index.vue';
+import AllProjects from '@/views/projects/index.vue';
+import AllBugs from '@/views/bugs/index.vue';
+import NewBug from '@/views/bugs/new.vue';
+import NewProject from '@/views/projects/new.vue';
 
 const routes = [
   {
@@ -18,12 +20,22 @@ const routes = [
   {
     path: '/projects',
     name: 'BrowseProjects',
-    component: ProjectsIndex,
+    component: AllProjects,
+  },
+  {
+    path: '/projects/new',
+    name: 'NewProject',
+    component: NewProject,
   },
   {
     path: '/bugs',
     name: 'BrowseBugs',
-    component: BugsIndex,
+    component: AllBugs,
+  },
+  {
+    path: '/bugs/new',
+    name: 'NewBug',
+    component: NewBug,
   },
 
 ];

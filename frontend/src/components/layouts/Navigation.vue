@@ -12,11 +12,31 @@
           <li class="nav-item">
             <router-link to="/" class="nav-link">Home</router-link>
           </li>
-          <li class="nav-item">
-            <router-link :to="{ name: 'BrowseProjects' }" class="nav-link">Projects</router-link>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">Projects
+            </a>
+            <ul class="dropdown-menu animate slideIn" aria-labelledby="navbarDropdown">
+              <li><p class= "text-center"><router-link :to="{ name: 'NewProject' }"
+              class="dropdown-item">Create Project</router-link></p>
+              </li>
+              <li><p class= "text-center"><router-link :to="{ name: 'BrowseProjects' }"
+              class="dropdown-item">View Projects</router-link></p>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <router-link :to="{ name: 'BrowseBugs' }" class="nav-link">Bugs</router-link>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">Bugs
+            </a>
+            <ul class="dropdown-menu animate slideIn" aria-labelledby="navbarDropdown">
+              <li><p class= "text-center"><router-link :to="{ name: 'NewBug' }"
+              class="dropdown-item">Create Bug</router-link></p>
+              </li>
+              <li><p class= "text-center"><router-link :to="{ name: 'BrowseBugs' }"
+              class="dropdown-item">View Bugs</router-link></p>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <router-link to="/About" class="nav-link">About</router-link>
