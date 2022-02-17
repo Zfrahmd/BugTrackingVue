@@ -28,8 +28,17 @@ export default {
     ...mapActions(['addProject']),
     onSubmit(event) {
       event.preventDefault();
-      this.addProject(this.description, this.project_name);
-      // this.addProject(this.description);
+      const payload = {
+        project: {
+          project_name: this.project_name,
+          description: this.description,
+        },
+      };
+      this.addProject(payload);
+      this.resetData();
+      this.$router.push({ name: 'BrowseProjects' });
+    },
+    resetData() {
       this.project_name = '';
       this.description = '';
     },
