@@ -43,7 +43,7 @@ class Api::V1::BugsController < ApplicationController
   end
 
   def bug_params
-    params.require(:bug).permit(:bug_name, :description)
+    params.require(:bug).permit(:title, :description, :bug_type, :feature_status, :bug_status, :deadline, :project_id,)
   end
 
 end

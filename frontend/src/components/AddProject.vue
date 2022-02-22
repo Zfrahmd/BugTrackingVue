@@ -3,11 +3,11 @@
     <h3>Add Project</h3>
     <div class="add">
       <form @submit="onSubmit">
-        <input type="text" class="form-control" v-model="project_name"
-        placeholder="Add Project Name..."/><br/>
-        <textarea type="text" class="form-control" v-model="description"
-        placeholder="Add Project Description..."/><br/>
-        <input type="submit" class="btn btn-outline-success" value="Create">
+        <input type="text" class="form-control my-3" v-model="project_name"
+        placeholder="Add Project Name..."/>
+        <textarea type="text" class="form-control my-3" v-model="description"
+        placeholder="Add Project Description..."/>
+        <input type="submit" class="btn btn-outline-success my-2" value="Create">
       </form>
     </div>
   </div>
@@ -28,19 +28,22 @@ export default {
     ...mapActions(['addProject']),
     onSubmit(event) {
       event.preventDefault();
-      const payload = {
+      const newProjectData = {
         project: {
           project_name: this.project_name,
           description: this.description,
         },
       };
-      this.addProject(payload);
+      this.addProject(newProjectData);
       this.resetData();
-      this.$router.push({ name: 'BrowseProjects' });
+      this.goBack();
     },
     resetData() {
       this.project_name = '';
       this.description = '';
+    },
+    goBack() {
+      this.$router.push({ name: 'BrowseProjects' });
     },
   },
 };

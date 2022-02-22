@@ -11,9 +11,9 @@
       <p class="text-center">
       </p>
     </div>
-    <div class="home">
+    <!-- <div class="home">
       <img alt="Vue logo" src="@/assets/logo.png">
-    </div>
+    </div> -->
   </div>
 </template>
 

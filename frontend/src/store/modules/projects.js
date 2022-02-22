@@ -18,8 +18,8 @@ export default {
       const response = await axios.get(api_url);
       commit('setProjects', response.data);
     },
-    async addProject({ commit }, payload) {
-      const response = await axios.post(api_url, payload);
+    async addProject({ commit }, newProjectData) {
+      const response = await axios.post(api_url, newProjectData);
       commit('newProject', response.data);
     },
     async deleteProject({ commit }, id) {
@@ -30,11 +30,10 @@ export default {
 
   mutations: {
     setProjects: (state, projects) => (state.projectsList = projects),
-    newProject(state, payload) {
-      state.projectsList = payload.data.project;
+    newProject(state, newProjectData) {
+      state.projectsList = newProjectData.project;
     },
     removeProject: (state, id) => (
       state.projectsList = state.projectsList.filter((project) => project.id !== id)),
-
   },
 };

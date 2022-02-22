@@ -1,17 +1,17 @@
 <template>
   <div class="py-5">
-    <h1 class="text-center">hellow from new bug</h1>
-    <!-- <Projects /> -->
+    <h1 class="text-center">Create a new bug</h1>
+    <AddBug />
   </div>
 </template>
 
 <script>
-// import Projects from '@/components/Projects.vue';
+import AddBug from '@/components/AddBug.vue';
 
 export default {
-  name: 'NewBugPage',
-  // components: {
-  //   Projects,
-  // },
+  name: 'New',
+  components: {
+    AddBug,
+  },
 };
 </script>

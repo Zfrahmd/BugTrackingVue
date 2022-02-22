@@ -5,6 +5,7 @@ import AllProjects from '@/views/projects/index.vue';
 import AllBugs from '@/views/bugs/index.vue';
 import NewBug from '@/views/bugs/new.vue';
 import NewProject from '@/views/projects/new.vue';
+import BugInfo from '@/components/BugInfo.vue';
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/bugs',
     name: 'BrowseBugs',
     component: AllBugs,
+  },
+  {
+    path: '/bugs/:id',
+    name: 'showBug',
+    component: BugInfo,
   },
   {
     path: '/bugs/new',
