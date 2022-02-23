@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/pages/Home.vue';
-import About from '@/views/pages/About.vue';
 import AllProjects from '@/views/projects/index.vue';
 import AllBugs from '@/views/bugs/index.vue';
 import NewBug from '@/views/bugs/new.vue';
 import NewProject from '@/views/projects/new.vue';
 import BugInfo from '@/components/BugInfo.vue';
+import ProjectInfo from '@/components/ProjectInfo.vue';
 
 const routes = [
   {
@@ -14,14 +14,14 @@ const routes = [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About,
-  },
-  {
     path: '/projects',
     name: 'BrowseProjects',
     component: AllProjects,
+  },
+  {
+    path: '/projects/:id',
+    name: 'showProject',
+    component: ProjectInfo,
   },
   {
     path: '/projects/new',
