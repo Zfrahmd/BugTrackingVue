@@ -13,6 +13,9 @@
           <button class="btn btn-outline-primary mx-2 my-3" @click="showProjectInfo(project.id)">
           Read More
           </button>
+          <button class="btn btn-outline-primary mx-2 my-3" @click="editProjectInfo(project.id)">
+          Edit Project
+          </button>
           <button @click="deleteProject(project.id)" class="btn btn-outline-danger">
           <i class="fas fa-trash-alt delete_icon"></i>
           </button>
@@ -31,6 +34,9 @@ export default {
     ...mapActions(['fetchProjects', 'deleteProject']),
     showProjectInfo(projectId) {
       this.$router.push({ name: 'showProject', params: { id: projectId } });
+    },
+    editProjectInfo(projectId) {
+      this.$router.push({ name: 'editProject', params: { id: projectId } });
     },
   },
   computed: {

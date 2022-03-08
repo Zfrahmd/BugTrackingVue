@@ -1,13 +1,19 @@
 <template>
   <div>
-    <h3>Add Project</h3>
     <div class="add">
       <form @submit="onSubmit">
-        <input type="text" class="form-control my-3" v-model="project_name"
-        placeholder="Add Project Name..."/>
-        <textarea type="text" class="form-control my-3" v-model="description"
-        placeholder="Add Project Description..."/>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Enter Project Title :</label>
+          <input type="text" class="form-control my-3" v-model="project_name"
+          placeholder="Add Project Name..."/>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Enter Project Description :</label>
+          <textarea type="text" class="form-control my-3" v-model="description"
+          placeholder="Add Project Description..."/>
+        </div>
         <input type="submit" class="btn btn-outline-success my-2" value="Create">
+        <a href="javascript:history.go(-1)" class="btn btn-outline-primary mx-3">Cancel</a>
       </form>
     </div>
   </div>
@@ -48,7 +54,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-
-</style>

@@ -21,7 +21,7 @@
           <p class="card-text attribute">Bug Status: <span class="attribute_value">
             {{bug.bug_status}}</span>
           </p>
-          <p class="card-text attribute">Dealine: <span class="attribute_value">
+          <p class="card-text attribute">Deadline: <span class="attribute_value">
             {{format_date(bug.deadline)}}</span>
           </p>
           <p class="card-text attribute">Created at: <span class="attribute_value">
@@ -32,6 +32,9 @@
           </p>
           <button class="btn btn-outline-primary mx-2 my-3" @click="showBugInfo(bug.id)">
           Read More
+          </button>
+          <button class="btn btn-outline-primary mx-2 my-3" @click="editBugInfo(bug.id)">
+          Edit Bug
           </button>
           <button @click="deleteBug(bug.id)" class="btn btn-outline-danger">
           <i class="fas fa-trash-alt delete_icon"></i>
@@ -59,6 +62,9 @@ export default {
     },
     showBugInfo(bugId) {
       this.$router.push({ name: 'showBug', params: { id: bugId } });
+    },
+    editBugInfo(bugId) {
+      this.$router.push({ name: 'editBug', params: { id: bugId } });
     },
   },
   computed: {

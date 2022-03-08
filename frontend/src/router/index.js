@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/pages/Home.vue';
 import AllProjects from '@/views/projects/index.vue';
 import AllBugs from '@/views/bugs/index.vue';
+import EditProject from '@/views/projects/edit.vue';
 import NewBug from '@/views/bugs/new.vue';
+import EditBug from '@/views/bugs/edit.vue';
 import NewProject from '@/views/projects/new.vue';
 import BugInfo from '@/components/BugInfo.vue';
 import ProjectInfo from '@/components/ProjectInfo.vue';
@@ -29,6 +31,11 @@ const routes = [
     component: NewProject,
   },
   {
+    path: '/projects/:id/edit',
+    name: 'editProject',
+    component: EditProject,
+  },
+  {
     path: '/bugs',
     name: 'BrowseBugs',
     component: AllBugs,
@@ -42,6 +49,11 @@ const routes = [
     path: '/bugs/new',
     name: 'NewBug',
     component: NewBug,
+  },
+  {
+    path: '/bugs/:id/edit',
+    name: 'editBug',
+    component: EditBug,
   },
 
 ];

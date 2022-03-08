@@ -2,6 +2,9 @@ import axios from 'axios';
 
 /* eslint-disable camelcase */
 /* eslint-disable no-return-assign */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-alert */
+
 const api_url = 'http://localhost:3000/api/v1/bugs';
 const proj_api_url = 'http://localhost:3000/api/v1/projects';
 
@@ -14,7 +17,7 @@ export default {
   getters: {
     allBugs: (state) => state.bugsList,
     allProjectsforBug: (state) => state.projectsList,
-    // allProjectsforBug: (state, getters, rootstate) => rootstate.projects.projectsList,
+    // allProjectsforBug: (state, getters, rootstate) => rootstate.projects.projectsList
   },
 
   actions: {
@@ -30,9 +33,15 @@ export default {
       const response = await axios.post(api_url, newBugData);
       commit('newBug', response.data);
     },
+    async editBug({ commit }, newBugData) {
+      const response = await axios.put(api_url, newBugData);
+      commit('updateBug', response.data);
+    },
     async deleteBug({ commit }, id) {
-      await axios.delete(`${api_url}/${id}`);
-      commit('removeBug', id);
+      if (confirm('Do you really want to delete?')) {
+        await axios.delete(`${api_url}/${id}`);
+        commit('removeBug', id);
+      }
     },
   },
 
@@ -42,7 +51,13 @@ export default {
     newBug(state, newBugData) {
       state.bugsList = newBugData.bug;
     },
+    updateBug(state, newBugData) {
+      // state.bugsList = state.bugsList.filter((bug) => bug.id !== id);
+      state.bugsList = newBugData.bug;
+    },
     removeBug: (state, id) => (
+      state.bugsList = state.bugsList.filter((bug) => bug.id !== id)),
+    getBug: (state, id) => (
       state.bugsList = state.bugsList.filter((bug) => bug.id !== id)),
   },
 };

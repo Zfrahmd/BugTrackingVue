@@ -52,7 +52,7 @@
             <label for="exampleFormControlInput1">Enter Project Deadline:</label>
             <input type="datetime-local" class="form-control my-3" v-model="deadline"/>
           </div>
-          <input type="submit" class="btn btn-outline-success my-3" value="Create">
+          <input type="submit" class="btn btn-outline-success my-3" value="Update">
           <a href="javascript:history.go(-1)" class="btn btn-outline-primary mx-3">Cancel</a>
         </form>
       </div>
@@ -66,12 +66,12 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
   data() {
     return {
-      title: '',
+      title: 'dummy',
       description: '',
       project_id: null,
-      bug_type: 0,
-      feature_status: 0,
-      bug_status: 0,
+      bug_type: null,
+      feature_status: null,
+      bug_status: null,
       deadline: null,
     };
   },
@@ -79,7 +79,7 @@ export default {
     ...mapGetters(['allProjectsforBug']),
   },
   methods: {
-    ...mapActions(['addBug', 'fetchProjects']),
+    ...mapActions(['editBug', 'fetchProjects']),
     onSubmit(event) {
       event.preventDefault();
       const newBugData = {
@@ -93,8 +93,7 @@ export default {
           deadline: this.deadline,
         },
       };
-      // Object.keys(this.bug_type).forEach((key) => { console.log(key); });
-      this.addBug(newBugData);
+      this.editBug(newBugData);
       this.resetData();
       this.goBack();
     },
