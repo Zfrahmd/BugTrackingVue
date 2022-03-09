@@ -33,10 +33,10 @@ export default {
       const response = await axios.post(api_url, newBugData);
       commit('newBug', response.data);
     },
-    async editBug({ commit }, newBugData) {
-      const response = await axios.put(api_url, newBugData);
-      commit('updateBug', response.data);
-    },
+    // async editBug({ commit }, newBugData) {
+    //   const response = await axios.put(api_url, newBugData);
+    //   commit('updateBug', response.data);
+    // },
     async deleteBug({ commit }, id) {
       if (confirm('Do you really want to delete?')) {
         await axios.delete(`${api_url}/${id}`);
@@ -51,10 +51,10 @@ export default {
     newBug(state, newBugData) {
       state.bugsList = newBugData.bug;
     },
-    updateBug(state, newBugData) {
-      // state.bugsList = state.bugsList.filter((bug) => bug.id !== id);
-      state.bugsList = newBugData.bug;
-    },
+    // updateBug(state, newBugData) {
+    //   // state.bugsList = state.bugsList.filter((bug) => bug.id !== id);
+    //   state.bugsList = newBugData.bug;
+    // },
     removeBug: (state, id) => (
       state.bugsList = state.bugsList.filter((bug) => bug.id !== id)),
     getBug: (state, id) => (

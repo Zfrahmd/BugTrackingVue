@@ -44,6 +44,7 @@ const routes = [
     path: '/bugs/:id',
     name: 'showBug',
     component: BugInfo,
+    props: (route) => ({ query: route.query.q }),
   },
   {
     path: '/bugs/new',
