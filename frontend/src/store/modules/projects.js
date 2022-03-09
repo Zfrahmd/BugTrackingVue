@@ -34,11 +34,11 @@ export default {
     //   const response = await axios.put(api_url, newProjectData);
     //   commit('updateProject', response.data);
     // },
-    async updateProject({ commit }, updatedProject) {
-      const response = await axios.put(`${api_url}/${updatedProject.id}`, updatedProject);
-      console.log(`${api_url}/${updatedProject.id}`);
-      commit('setUpdatedProject', response.data);
-    },
+    // async updateProject({ commit }, updatedProject) {
+    //   const response = axios.patch(`${api_url}/${updatedProject.id}`, updatedProject);
+    //   console.log(`${api_url}/${updatedProject.project_name}`);
+    //   commit(response.data);
+    // },
     async deleteProject({ commit }, id) {
       if (confirm('Do you really want to delete?')) {
         await axios.delete(`${api_url}/${id}`);
@@ -57,11 +57,11 @@ export default {
     },
     removeProject: (state, id) => (
       state.projectsList = state.projectsList.filter((project) => project.id !== id)),
-    setUpdatedProject: (state, updatedProject) => {
-      const index = state.projectsList.findIndex((project) => project.id === updatedProject.id);
-      if (index !== -1) {
-        state.projectsList.splice(index, 1, updatedProject);
-      }
-    },
+    // setUpdatedProject: (state, updatedProject) => {
+    //   const index = state.projectsList.findIndex((project) => project.id === updatedProject.id);
+    //   if (index !== -1) {
+    //     state.projectsList.splice(index, 1, updatedProject);
+    //   }
+    // },
   },
 };
